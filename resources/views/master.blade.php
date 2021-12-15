@@ -14,6 +14,21 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 
   </head>
 
@@ -30,91 +45,13 @@
         </div>
         <div class="site-mobile-menu-body"></div>
       </div>
-
-      <header class="p-3 bg-dark text-white">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="" class="nav-link px-2 text-secondary">Главная</a></li>
-                    <li><a href="services.html" class="nav-link">Сервисы</a></li>
-                    {{-- <li class="active"><a href="barber-shop.html" class="nav-link">Barber Shop</a></li> --}}
-                    <li><a href="blog.html" class="nav-link">О нас</a></li>
-                    <li><a href="contact.html" class="nav-link">Контакты</a></li>
-                    {{-- <li><a href="" class="nav-link px-2 text-white">Все сотрудники</a></li> --}}
-                    {{-- <li><a href="{{ route('sendmail') }}" class="nav-link px-2 text-white">Отправка письма</a></li> --}}
-                </ul>
-
-                <div class="text-end">
-                    @guest
-                        <a class="btn btn-outline-light me-2" href="{{ route('login') }}">@lang('Войти')</a>
-                    @else
-                        <a class="btn btn-outline-light me-2" href="{{ route('get-logout') }}">@lang('logout')</a>
-                    @endguest
-                        @auth
-                            @admin
-                            {{-- (Auth::user()->isAdmin()){{ Auth::user()->name }} --}}
-                                <a class="btn btn-outline-light me-2" href="{{ route('admin.index') }}">@lang('admin_panel')</a>
-                            @endadmin
-                        @endauth
-                        @guest
-                            <a class="btn btn-outline-light me-2" href="{{ route('register') }}">@lang('Зарегистрироваться')</a>
-                        @endguest
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-        <form method="get" action="">
-            <div class="form-row">
-                <div class="form-group col-md-10">
-                    <input type="text" class="form-control form-control-dark" id="s" name="s" value="{{request()->s}}" placeholder="Поиск по сайту..." aria-label="Search"></div>
-                    <div class="form-group col-md-2">
-                    <button type="submit" class="btn btn-secondary btn-block" value="Найти">Найти</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </header>
-
-
 {{--
-      <header class="site-navbar site-navbar-target" role="banner">
+      <header class="p-3 bg-dark text-white">
 
-        <div class="container">
-          <div class="row align-items-center position-relative">
-
-            <div class="col-3 ">
-              <div class="site-logo">
-                <a href="index.html">Barber-Shop</a>
-              </div>
-            </div>
-
-            <div class="col-9  text-right">
+    </header> --}}
+@include('layouts.header')
 
 
-              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
-
-
-
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="services.html" class="nav-link">Services</a></li>
-                  <li class="active"><a href="barber-shop.html" class="nav-link">Barber Shop</a></li>
-                  <li><a href="about.html" class="nav-link">About</a></li>
-                  <li><a href="blog.html" class="nav-link">Blog</a></li>
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-
-
-          </div>
-        </div>
-
-      </header> --}}
 
     <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/hero_1.jpg')">
@@ -254,58 +191,39 @@
     </div>
 
 
-
+{{--
     <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <img src="images/img_1.jpg" alt="Image" class="img-fluid mb-5">
-            <h2 class="footer-heading mb-3">About Us</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          </div>
-          <div class="col-lg-8 ml-auto">
-            <div class="row">
-              <div class="col-lg-6 ml-auto">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <h2 class="footer-heading mb-4">Newsletter</h2>
-                <form action="#" class="d-flex" class="subscribe">
-                  <input type="text" class="form-control mr-3" placeholder="Email">
-                  <input type="submit" value="Send" class="btn btn-primary">
-                </form>
-              </div>
 
-            </div>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
+    </footer> --}}
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-  </body>
+    {{-- @if(\Illuminate\Support\Str::startsWith(request()->path(), 'admin'))
+    @include('layouts.admin-header')
+@else
+    @include('layouts.header')
+@endif --}}
+
+{{-- <main>
+    <section class="py-5 text-center container">
+        @if (session()->has('success'))
+            <p class="alert alert-success">{{ session()->get('success') }}</p>
+        @endif
+        @if (session()->has('warning'))
+            <p class="alert alert-warning">{{ session()->get('warning') }}</p>
+        @endif
+
+        @yield('content')
+    </section>
+</main> --}}
+
+@include('layouts.footer')
+
+<script src="/js/bootstrap.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+<body>
 
 </html>
-

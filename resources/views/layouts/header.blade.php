@@ -5,16 +5,16 @@
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{{ route('index') }}" class="nav-link px-2 text-secondary">Главная</a></li>
-                <li><a href="{{ route('index') }}" class="nav-link px-2 text-white">Все сотрудники</a></li>
-                <li><a href="{{ route('categories') }}" class="nav-link px-2 text-white">Вид работы</a></li>
-                <li><a href="{{ route('contact-us') }}" class="nav-link px-2 text-white">Обратная связь</a></li>
-                <li><a href="{{ route('sendmail') }}" class="nav-link px-2 text-white">Отправка письма</a></li>
+                <li><a href="" class="nav-link px-2 text-secondary">Barber-Shop</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Все сотрудники</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Сервисы</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Обратная связь</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Отправка письма</a></li>
             </ul>
 
             <div class="text-end">
                 @guest
-                    <a class="btn btn-outline-light me-2" href="{{ route('login') }}">@lang('main.login')</a>
+                    <a class="btn btn-outline-light me-2" href="{{ route('login') }}">@lang('Войти')</a>
                 @else
                     <a class="btn btn-outline-light me-2" href="{{ route('get-logout') }}">@lang('main.logout')</a>
                 @endguest
@@ -27,13 +27,13 @@
 {{--                        <a href="{{ route('person.orders.index') }}">@lang('main.my_orders')</a>--}}
                     @endauth
                     @guest
-                        <a class="btn btn-outline-light me-2" href="{{ route('register') }}">@lang('main.register')</a>
+                        <a class="btn btn-outline-light me-2" href="{{ route('register') }}">@lang('Регистрация')</a>
                     @endguest
             </div>
         </div>
     </div>
     <div class="col-md-12">
-    <form method="get" action="{{ route('search')}}">
+    <form method="get" action="">
         <div class="form-row">
             <div class="form-group col-md-10">
                 <input type="text" class="form-control form-control-dark" id="s" name="s" value="{{request()->s}}" placeholder="Поиск по сайту..." aria-label="Search"></div>
