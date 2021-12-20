@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Barber-Shop:@yield('title')</title>
+
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -58,7 +60,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
-              <h1 class="mb-3">Barber Shop</h1>
+              <h1 class="mb-3">Barber-Shop</h1>
               <p>Только на нашем сайте вы можете выбрать интересующий вас вид прически и выбрать любого из вакантных парикмахеров</p>
               {{-- <p><a href="#" class="btn btn-primary">Learn More</a></p> --}}
             </div>
@@ -67,44 +69,9 @@
       </div>
     </div>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h3 class="scissors text-center">Выберите одного из наших специалистов</h3>
-            <p class="mb-5 lead">Здесь вам предоставляются вам на выбор лучшие наши специалисты в этой области</p>
-          </div>
-        </div>
-        <div class="row hair-style">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/img_1.jpg" alt="Image placeholder">
-              <h2>Парикмахер Иванов</h2>
-              <span>стоимость услуг от $50.00<br>
-              время работы: с 9.00 до 18.00</span>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/img_2.jpg" alt="Image placeholder">
-              <h2>Парикмахер Петров</h2>
-              <span>стоимость услуг от $50.00<br>
-                время работы: с 9.00 до 18.00</span>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-            <a href="#" class="place">
-              <img src="images/img_3.jpg" alt="Image placeholder">
-              <h2>Парикмахер Сидоров</h2>
-              <span>стоимость услуг от $50.00<br>
-                время работы: с 9.00 до 18.00</span>
+@include('layouts.main')
 
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
+@yield('content')
     <!-- END section -->
 
     {{-- <div class="site-section bg-light">
@@ -188,7 +155,7 @@
           <div class="col-7 text-center mb-5">
             <h2 class="text-white scissors primary-color-icon text-center">Quality Haircut</h2>
             <p class="lead text-white mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo doloribus, suscipit libero, voluptate aliquam.</p>
-            <p><a href="#" class="btn btn-primary">Позвоните нам сейчас</a></p>
+            <p><a href="#" class="btn btn-primary">Свяжитесь с нами</a></p>
           </div>
         </div>
       </div>

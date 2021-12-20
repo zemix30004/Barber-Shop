@@ -24,11 +24,11 @@
           <div class="col-lg-8 ml-auto">
             <div class="row">
               <div class="col-lg-6 ml-auto">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <h2 class="footer-heading mb-4">Ссылки</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">О нас</a></li>
-                  <li><a href="#">Тестирования</a></li>
-                  <li><a href="#">Сроки гарантии</a></li>
+                  <li><a href="#">Проверка качества</a></li>
+                  <li><a href="#">Гарантия качества</a></li>
                   <li><a href="#">Приватность</a></li>
                   <li><a href="#">Контакты</a></li>
                 </ul>
@@ -49,7 +49,7 @@
             <div class="border-top pt-5">
               <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>

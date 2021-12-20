@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -20,17 +22,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
-
+// Route::get('/', function () {
+//     return view('master');
+// });
+Route::get('/', [UserController::class, 'index'])->name('master');
 
 // Route::get('/', [PagesController::class, 'index']);
 
 // Route::get('/about', [PagesController::class, 'about']);
 
 // Route::get('/services', [PagesController::class, 'services']);
-
+Route::get('/employee1', [EmployeeController::class, 'getEmployee1'])->name('employee.index1');
+Route::get('/employee2', [EmployeeController::class, 'getEmployee2'])->name('employee.index2');
+Route::get('/employee3', [EmployeeController::class, 'getEmployee3'])->name('employee.index3');
 
 Auth::routes([
     'reset' => false,
