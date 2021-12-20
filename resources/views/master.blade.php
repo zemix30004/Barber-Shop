@@ -59,8 +59,8 @@
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
               <h1 class="mb-3">Barber Shop</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
-              <p><a href="#" class="btn btn-primary">Learn More</a></p>
+              <p>Только на нашем сайте вы можете выбрать интересующий вас вид прически и выбрать любого из вакантных парикмахеров</p>
+              {{-- <p><a href="#" class="btn btn-primary">Learn More</a></p> --}}
             </div>
           </div>
         </div>
@@ -71,30 +71,34 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center">
-            <h3 class="scissors text-center">Featured Hair Styles</h3>
-            <p class="mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!</p>
+            <h3 class="scissors text-center">Выберите одного из наших специалистов</h3>
+            <p class="mb-5 lead">Здесь вам предоставляются вам на выбор лучшие наши специалисты в этой области</p>
           </div>
         </div>
         <div class="row hair-style">
           <div class="col-lg-4 col-md-4 col-sm-6 col-12">
             <a href="#" class="place">
               <img src="images/img_1.jpg" alt="Image placeholder">
-              <h2>Beard Shaving</h2>
-              <span>$50.00 only</span>
+              <h2>Парикмахер Иванов</h2>
+              <span>стоимость услуг от $50.00<br>
+              время работы: с 9.00 до 18.00</span>
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-6 col-12">
             <a href="#" class="place">
               <img src="images/img_2.jpg" alt="Image placeholder">
-              <h2>Crew Cut</h2>
-              <span>$50.00 only</span>
+              <h2>Парикмахер Петров</h2>
+              <span>стоимость услуг от $50.00<br>
+                время работы: с 9.00 до 18.00</span>
             </a>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-6 col-12">
             <a href="#" class="place">
               <img src="images/img_3.jpg" alt="Image placeholder">
-              <h2>Beard Trim</h2>
-              <span>$50.00 only</span>
+              <h2>Парикмахер Сидоров</h2>
+              <span>стоимость услуг от $50.00<br>
+                время работы: с 9.00 до 18.00</span>
+
             </a>
           </div>
 
@@ -103,20 +107,20 @@
     </div>
     <!-- END section -->
 
-    <div class="site-section bg-light">
+    {{-- <div class="site-section bg-light">
       <div class="container">
         <div class="row justify-content-center  mb-5">
           <div class="col-md-7 text-center">
-            <h3 class="scissors text-center">Services &amp; Pricing</h3>
+            <h3 class="scissors text-center">Сервисы &amp; Расценки</h3>
             <p class="mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!</p>
 
             <p class="text-center">
-              <a href="#" class="btn btn-primary custom-prev">Prev</a>
-              <a href="#" class="btn btn-primary custom-next">Next</a>
+              <a href="#" class="btn btn-primary custom-prev">Предыдущ</a>
+              <a href="#" class="btn btn-primary custom-next">Следующ</a>
             </p>
-          </div>
+          </div> --}}
 
-        </div>
+        {{-- </div>
         <div class="row">
           <div class="col-12">
 
@@ -125,7 +129,7 @@
               <div class="item-1 h">
                 <img src="images/img_1.jpg" alt="Image" class="img-fluid">
                 <div class="item-1-contents">
-                  <h3>Haircut</h3>
+                  <h3>Стрижка</h3>
                   <ul>
                     <li class="d-flex"><span>Men's Cut</span> <span class="price ml-auto">$29.00</span></li>
                     <li class="d-flex"><span>Men's Cut with Shampoo and Blow Dry</span><span class="price ml-auto">$10.00</span></li>
@@ -140,13 +144,13 @@
               <div class="item-1 h">
                 <img src="images/img_2.jpg" alt="Image" class="img-fluid">
                 <div class="item-1-contents">
-                  <h3>Hair Styling</h3>
+                  <h3>Стиль волос</h3>
                   <ul>
-                    <li class="d-flex"><span>Shampoo</span> <span class="price ml-auto">$29.00</span></li>
-                    <li class="d-flex"><span>Blow Dry</span><span class="price ml-auto">$10.00</span></li>
-                    <li class="d-flex"><span>Iron</span><span class="price ml-auto">$32.00</span></li>
-                    <li class="d-flex"><span>Brazilian Blow Out</span><span class="price ml-auto">$23.00</span></li>
-                    <li class="d-flex"><span>Hair Art</span><span class="price ml-auto">$54.00</span></li>
+                    <li class="d-flex"><span>Шампунь</span> <span class="price ml-auto">$29.00</span></li>
+                    <li class="d-flex"><span>Сухая продувка</span><span class="price ml-auto">$10.00</span></li>
+                    <li class="d-flex"><span>Железо</span><span class="price ml-auto">$32.00</span></li>
+                    <li class="d-flex"><span>Бразильская расдувка</span><span class="price ml-auto">$23.00</span></li>
+                    <li class="d-flex"><span>Арт волос</span><span class="price ml-auto">$54.00</span></li>
                   </ul>
                 </div>
 
@@ -155,17 +159,17 @@
               <div class="item-1 h">
                 <img src="images/img_3.jpg" alt="Image" class="img-fluid">
                 <div class="item-1-contents">
-                  <h3>Hair Scalp Care</h3>
+                  <h3>Уход за кожей головы</h3>
                   <ul>
                     <li class="d-flex"><span>Shampoo</span> <span class="price ml-auto">$29.00</span></li>
-                    <li class="d-flex"><span>Blow Dry</span><span class="price ml-auto">$10.00</span></li>
-                    <li class="d-flex"><span>Iron</span><span class="price ml-auto">$32.00</span></li>
-                    <li class="d-flex"><span>Brazilian Blow Out</span><span class="price ml-auto">$23.00</span></li>
-                    <li class="d-flex"><span>Hair Art</span><span class="price ml-auto">$54.00</span></li>
+                    <li class="d-flex"><span>Сухая продувка</span><span class="price ml-auto">$10.00</span></li>
+                    <li class="d-flex"><span>Железо</span><span class="price ml-auto">$32.00</span></li>
+                    <li class="d-flex"><span>Бразильская расдувка</span><span class="price ml-auto">$23.00</span></li>
+                    <li class="d-flex"><span>Арт волос</span><span class="price ml-auto">$54.00</span></li>
                   </ul>
                 </div>
 
-              </div>
+              </div> --}}
 
             </div>
 
@@ -184,7 +188,7 @@
           <div class="col-7 text-center mb-5">
             <h2 class="text-white scissors primary-color-icon text-center">Quality Haircut</h2>
             <p class="lead text-white mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo doloribus, suscipit libero, voluptate aliquam.</p>
-            <p><a href="#" class="btn btn-primary">Contact Us Now</a></p>
+            <p><a href="#" class="btn btn-primary">Позвоните нам сейчас</a></p>
           </div>
         </div>
       </div>

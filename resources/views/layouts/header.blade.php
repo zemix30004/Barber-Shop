@@ -10,6 +10,7 @@
                 <li><a href="" class="nav-link px-2 text-white">Сервисы</a></li>
                 <li><a href="" class="nav-link px-2 text-white">Обратная связь</a></li>
                 <li><a href="" class="nav-link px-2 text-white">Отправка письма</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Панель администратора</a></li>
             </ul>
 
             <div class="text-end">

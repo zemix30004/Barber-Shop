@@ -32,7 +32,12 @@ Route::get('/', function () {
 // Route::get('/services', [PagesController::class, 'services']);
 
 
-Auth::routes();
+Auth::routes([
+    'reset' => false,
+    'confirm' => false,
+    'verify' => false,
+]);
+Route::get('logout', [LoginController::class, 'logout'])->name('get-logout');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
