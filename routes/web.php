@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,10 +23,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('master');
-// });
-Route::get('/', [UserController::class, 'index'])->name('master');
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/', [UserController::class, 'index'])->name('master');
 
 // Route::get('/', [PagesController::class, 'index']);
 
@@ -44,6 +45,12 @@ Auth::routes([
 Route::get('logout', [LoginController::class, 'logout'])->name('get-logout');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
+});
 
 // Route::get('login', 'LoginController@showLoginForm')->name('login');
 // Route::post('login', 'LoginController@login');
