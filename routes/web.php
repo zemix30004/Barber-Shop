@@ -56,8 +56,11 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::resource('products', ProductController::class);
 });
 Route::get('/contact', [ContactController::class, 'getContact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'createContact'])->name('contact.createContact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/sendmail', [SendMailController::class, 'index'])->name('sendmail');
+Route::post('/contact-us', [ContactController::class, 'contactSubmit'])->name('contact.submit');
+
+
 
 // Route::get('login', 'LoginController@showLoginForm')->name('login');
 // Route::post('login', 'LoginController@login');

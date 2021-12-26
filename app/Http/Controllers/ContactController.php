@@ -8,16 +8,17 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
 use App\Jobs\QueueSenderEmail;
 
 class ContactController extends Controller
 {
-    //     /**
-    //      * Display a listing of the resource.
-    //      *
-    //      * @return \Illuminate\Http\Response
-    //      */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     // function __construct()
     // {
     //     $this->middleware('permission:contact-list|contact-create|contact-edit|contact-delete', ['only' => ['index', 'show']]);
@@ -25,37 +26,130 @@ class ContactController extends Controller
     //     $this->middleware('permission:contact-edit', ['only' => ['edit', 'update']]);
     //     $this->middleware('permission:contact-delete', ['only' => ['destroy']]);
     // }
-    public function index()
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
-        $contacts = Contact::latest()->paginate(5);
+        $contacts = Contact::orderBy('id', 'DESC')->paginate(5);
         return view('contacts.index', compact('contacts'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view('contact');
+        $permission = Permission::get();
+        return view('contacts.create', compact('permission'));
     }
-    public function store(ContactRequest $request)
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        request()->validate([
             'name' => 'required|max:20',
             'phone' => 'required|numeric',
             'email' => 'required|email',
-            'message' => 'required|max:500',
-        ]);
-        if ($validator->fails()) {
-            return view('contact')->withErrors($validator);
-        }
 
-        Mail::send('emails.contact-message', [
-            'message' => $request->message
-        ], function ($mail)  use ($request) {
-            $mail->from($request->email, $request->name);
-            $mail->to('hello@example.com')->subject('Contact Message');
-            $qs = (new QueueSenderEmail($mail))->delay(now()->addMinutes(3));
-            $this->dispatch($qs);
-        });
-        return redirect()->back()->with('flash_message', 'Спасибо вам за сообщение');
+        ]);
+        Contact::create($request->all());
+
+        return redirect()->route('contacts.index')->with('success', 'Contact created successfully!');
+
+
+        // Mail::send('emails.contact-message', [
+        //     'message' => $request->message
+        // ], function ($mail)  use ($request) {
+        //     $mail->from($request->email, $request->name);
+        //     $mail->to('hello@example.com')->subject('Contact Message');
+        //     $qs = (new QueueSenderEmail($mail))->delay(now()->addMinutes(3));
+        //     $this->dispatch($qs);
+        // });
+        // return redirect()->back()->with('flash_message', 'Спасибо вам за сообщение');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Contact $contact)
+    {
+        $contact = Contact::find($contact);
+        return view('contacts.show', compact('contacts'));
+    }
+    //     /**
+    //      * Show the form for editing the specified resource.
+    //      *
+    //      * @param  int  $id
+    //      * @return \Illuminate\Http\Response
+    //      */
+
+    public function edit(Contact $contact)
+    {
+        $contact = Contact::find($contact);
+        return view('contacts.edit', compact('contacts'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Contact $contact)
+    {
+        request()->validate([
+            'name' => 'required|max:20',
+            'phone' => 'required|numeric',
+            'email' => 'required|email',
+
+        ]);
+
+
+        $contact = Contact::find($contact);
+        $contact->update($request->all());
+        return redirect()->route('contacts.index')
+            ->with('success', 'Contact updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Contact $contact)
+    {
+        $contact = Contact::find($contact);
+        $contact->delete();
+
+        return redirect()->route('contacts.index')
+            ->with('success', 'Contact deleted successfully');
+    }
+
+    public function getContact()
+    {
+        return view('contact');
+    }
+
+    public function createContact()
+    {
+        return view('contact');
     }
 
     public function contactSubmit(Request $request)
@@ -64,7 +158,7 @@ class ContactController extends Controller
             'name' => 'required',
             'phone' => 'required|numeric',
             'email' => 'required|email',
-            'message' => 'required'
+
         ]);
 
         $contact = new Contact;
@@ -84,15 +178,5 @@ class ContactController extends Controller
             $message->to('hello@example.com');
         });
         return back()->with('success', 'Сообщение было успешно отправлено!');
-    }
-
-    public function getContact()
-    {
-        return view('contact');
-    }
-    public function adminContact(Request $request)
-    {
-        $contacts = Contact::paginate(10);
-        return view('contacts.index', ['contacts' => $contacts]);
     }
 }

@@ -24,7 +24,6 @@
     <th>Phone</th>
     <th>Email</th>
     <th>Message</th>
-
     <th width="280px">Action</th>
     </tr>
     @foreach ($contacts as $key => $contact)
@@ -33,6 +32,7 @@
         <td>{{ $contact->name }}</td>
         <td>{{ $contact->phone }}</td>
         <td>{{ $contact->email }}</td>
+        <td>{{ $contact->message }}</td>
         <td>
             <form action="{{ route('contacts.destroy',$contact->id) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}">Show</a>
@@ -42,6 +42,9 @@
                 @csrf
                 @method('DELETE')
                 @can('contact-delete')
+                {!! Form::open(['method' => 'DELETE','route' => ['contacts.destroy', $contact->id],'style'=>'display:inline']) !!}
+                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
                 <button type="submit" class="btn btn-danger">Delete</button>
                 @endcan
             </form>
@@ -51,5 +54,6 @@
 </table>
 
 {!! $contacts->links() !!}
+@endsection
 
 

@@ -5,10 +5,20 @@
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="" class="nav-link px-2 text-secondary">Barber-Shop</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Главная</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Barber-Shop</a></li>
+                <li><a class="nav-link text-white" href="/">Главная</a></li>
                 <li><a href="{{ route('contact') }}" class="nav-link px-2 text-white">Контакты</a></li>
                 <li><a href="{{ route('users.index') }}" class="nav-link px-2 text-white">Панель администратора</a></li>
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @endif
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
             </ul>
 
             {{-- <div class="text-end">
