@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 
 @section('content')
@@ -53,4 +53,4 @@
     {!! $products->links() !!}
 
 <p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
-@endsection
+@endsection --}}

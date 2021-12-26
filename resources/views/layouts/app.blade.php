@@ -38,6 +38,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
+                        <li><a class="nav-link" href="/">Главная</a></li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -49,9 +50,12 @@
                                 </li>
                             @endif
                         @else
-                        <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
-                        <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
-                        <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>
+                        <li><a class="nav-link" href="/">Главная</a></li>
+                        <li><a class="nav-link" href="{{ route('users.index') }}">Управление пользователями</a></li>
+                        <li><a class="nav-link" href="{{ route('roles.index') }}">Управление ролями</a></li>
+                        <li><a class="nav-link" href="{{ route('contacts.index') }}">Управление контактами</a></li>
+
+                        {{-- <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li> --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

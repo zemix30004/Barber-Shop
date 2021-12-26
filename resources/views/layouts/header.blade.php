@@ -6,14 +6,12 @@
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="" class="nav-link px-2 text-secondary">Barber-Shop</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Все сотрудники</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Сервисы</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Обратная связь</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Отправка письма</a></li>
-                <li><a href="" class="nav-link px-2 text-white">Панель администратора</a></li>
+                <li><a href="" class="nav-link px-2 text-white">Главная</a></li>
+                <li><a href="{{ route('contact') }}" class="nav-link px-2 text-white">Контакты</a></li>
+                <li><a href="{{ route('users.index') }}" class="nav-link px-2 text-white">Панель администратора</a></li>
             </ul>
 
-            <div class="text-end">
+            {{-- <div class="text-end">
                 @guest
                     <a class="btn btn-outline-light me-2" href="{{ route('login') }}">@lang('Войти')</a>
                 @else
@@ -21,16 +19,16 @@
                 @endguest
                     @auth
                         @admin
-                        {{-- (Auth::user()->isAdmin()){{ Auth::user()->name }} --}}
+                        (Auth::user()->isAdmin()){{ Auth::user()->name }}
                             <a class="btn btn-outline-light me-2" href="{{ route('admin.index') }}">@lang('main.admin_panel')</a>
                         @endadmin
                     @else
-{{--                        <a href="{{ route('person.orders.index') }}">@lang('main.my_orders')</a>--}}
+                    <a href="{{ route('person.orders.index') }}">@lang('main.my_orders')</a>
                     @endauth
                     @guest
                         <a class="btn btn-outline-light me-2" href="{{ route('register') }}">@lang('Регистрация')</a>
                     @endguest
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="col-md-12">
