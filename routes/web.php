@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\BarberController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AppointmentController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -50,6 +51,11 @@ Route::get('logout', [LoginController::class, 'logout'])->name('get-logout');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
+    // Route::group([
+    //     'prefix' => 'admin',
+    //     'middleware' => 'is_admin',
+    //     'as' => 'admin.',
+    // ]);
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('contacts', ContactController::class);
@@ -59,6 +65,8 @@ Route::get('/contact', [ContactController::class, 'getContact'])->name('contact'
 Route::post('/contact', [ContactController::class, 'createContact'])->name('contact.createContact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/contact-us', [ContactController::class, 'contactSubmit'])->name('contact.submit');
+
+Route::get('/view', [AppointmentController::class, 'index']);
 
 
 

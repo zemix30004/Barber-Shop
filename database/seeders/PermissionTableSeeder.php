@@ -24,7 +24,6 @@ class PermissionTableSeeder extends Seeder
             'product-edit',
             'product-delete',
             'contact-list',
-            'contact-create',
             'contact-edit',
             'contact-delete'
         ];

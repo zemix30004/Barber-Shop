@@ -23,7 +23,7 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>No</th>
+        <th>№</th>
         <th>Name</th>
         <th width="280px">Action</th>
     </tr>
@@ -48,5 +48,4 @@
 
 {!! $roles->render() !!}
 
-{{-- <p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p> --}}
 @endsection

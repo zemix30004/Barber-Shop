@@ -23,7 +23,7 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
+            <th>№</th>
             <th>Name</th>
             <th>Details</th>
             <th width="280px">Action</th>

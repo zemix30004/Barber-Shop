@@ -18,16 +18,16 @@ class Contact extends Model
      *
      * @var array
      */
-    public static function getContact()
-    {
-        $records = DB::table('contacts')->select('id', 'name', 'phone', 'email', 'message')->get()->toArray();
-        return $records;
-    }
+    // public static function getContact()
+    // {
+    //     $records = DB::table('contacts')->select('id', 'name', 'phone', 'email', 'message')->get()->toArray();
+    //     return $records;
+    // }
 
-    protected $fillable = ['id', 'name', 'phone', 'email', 'message'];
+    protected $fillable = ['name', 'phone', 'email', 'message'];
 
-    public function contacts()
-    {
-        return $this->hasMany(Contact::class);
-    }
+    // public function contacts()
+    // {
+    //     return $this->hasMany(Contact::class);
+    // }
 }

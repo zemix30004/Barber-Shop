@@ -16,7 +16,7 @@
                 <li><a class="nav-link px-2 text-white" href="">Отзывы</a></li> --}}
                 @guest
                 @else
-                <li><a class="btn btn-outline-light me-2" href="{{ route('get-logout') }}">@lang('main.logout')</a></li>
+                <li><a class="btn btn-outline-light me-2" href="{{ route('get-logout') }}">Logout</a></li>
                 @endguest
             </ul>
             </div>
